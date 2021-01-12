@@ -1,0 +1,174 @@
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0;
+	font-size: 1.6rem;
+}
+
+a,
+a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-areas: "header" "main" "footer";
+	grid-template-columns: 1fr;
+	grid-template-rows: 8rem 1fr 2rem;
+	height: 100vh;
+}
+
+#header {
+	grid-area: header;
+	width: 100%;
+	display: flex;
+	font-size: 2rem;
+	border-bottom: 0.1px rgb(180, 180, 180) solid;
+	z-index: 100;
+}
+
+#main {
+	grid-area: main;
+	background-color: rgb(230, 230, 230);
+}
+
+#footer {
+	grid-area: footer;
+	text-align: center;
+	border-top: 0.1px rgb(180, 180, 180) solid;
+}
+
+#logo {
+	height: 7.75rem;
+}
+
+#main-content {
+	width: 100vw;
+	max-width: 144rem;
+	height: 100%;
+	background-color: white;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 3rem;
+	font-size: larger;
+}
+
+/* Menu */
+
+#menu-icon {
+	display: hidden;
+	width: 4rem;
+	height: 4rem;
+	background: transparent url(Images/menu.jpg);
+	background-size: cover;
+}
+
+a:hover#menu-icon {
+	border-radius: 4px 4px 0 0;
+}
+
+#links {
+	margin-top: 1.6rem;
+	margin-bottom: 0;
+	list-style: none;
+}
+
+#links li {
+	float: left;
+	padding: 10px;
+}
+
+.current {
+	color: #2262ad !important;
+}
+
+#main-img {
+	width: 100vw;
+	max-width: 480px;
+}
+
+/* Main */
+.container {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.carousel {
+	width: 100%;
+	height: calc(100vh - 10rem);
+}
+
+.carousel-inner {
+	/* make sure your .items will get correct height */
+	height: 100%;
+}
+
+.item {
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+#crop-1 {
+	background-position: 46.5% 50%;
+}
+
+#crop-2 {
+	background-position: 52% 50%;
+}
+
+#crop-3 {
+	background-position: 47% 50%;
+}
+
+#crop-4 {
+	background-position: 17.5% 50%;
+}
+
+.item img {
+	visibility: hidden;
+}
+
+/*MEDIA QUERY*/
+@media only screen and (max-width: 640px) {
+	header {
+		position: absolute;
+	}
+
+	#menu-icon {
+		display: inline-block;
+		position: absolute;
+		right: 2rem;
+		top: 1.75rem;
+	}
+
+	nav ul,
+	nav:active ul {
+		display: none;
+		position: absolute;
+		padding: 20px;
+		background: white;
+		border: 2px solid #444;
+		right: 20px;
+		top: 60px;
+		width: 50%;
+		border-radius: 4px 0 4px 4px;
+	}
+
+	nav li {
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+	}
+
+	nav li:not(:last-child) {
+		border-bottom: 0.1px gray solid;
+	}
+}
